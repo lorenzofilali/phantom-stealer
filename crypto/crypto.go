@@ -7,6 +7,7 @@ import (
 	"encoding/base64"
 	"os"
 	"phantom/config"
+	"syscall"
 	"unsafe"
 
 	"golang.org/x/crypto/pbkdf2"
@@ -91,7 +92,7 @@ func dpapi(data []byte) ([]byte, error) {
 	}
 
 	procDecrypt := getCryptUnprotectData()
-	if procDecrypt == 0 {
+	if procDecrypt == nil {
 		return nil, nil
 	}
 
@@ -117,6 +118,6 @@ func dpapi(data []byte) ([]byte, error) {
 	return output, nil
 }
 
-func getCryptUnprotectData() uintptr {
-	return 0 // resolved dynamically in syscalls package
+func getCryptUnprotectData() *syscall.Proc {
+	return nil // resolved dynamically in syscalls package
 }
